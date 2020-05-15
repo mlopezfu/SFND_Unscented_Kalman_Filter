@@ -9,6 +9,11 @@ class UKF {
   /**
    * Constructor
    */
+    ///* the current NIS for radar
+  double NIS_radar_;
+
+  ///* the current NIS for laser
+  double NIS_laser_;
   UKF();
 
   /**
@@ -92,9 +97,25 @@ class UKF {
 
   // Augmented state dimension
   int n_aug_;
-
+  // Number of sigma points
+  int n_sig_;
   // Sigma point spreading parameter
   double lambda_;
+  // Prediction
+  Eigen::MatrixXd Xsig ;
+  Eigen::VectorXd x_aug ;
+  Eigen::MatrixXd P_aug ;
+  // LIDAR
+  Eigen::MatrixXd H;
+  Eigen::MatrixXd RL;
+  Eigen::VectorXd z_predL;
+  // RADAR
+  Eigen::MatrixXd Zsig;
+  Eigen::VectorXd z_pred;
+  Eigen::MatrixXd R;
+  Eigen::MatrixXd S;
+  Eigen::MatrixXd Tc;
+  Eigen::MatrixXd K; 
 };
 
 #endif  // UKF_H

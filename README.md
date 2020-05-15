@@ -26,6 +26,13 @@ it's own UKF object generated for it, and will update each indidual one during e
 
 The red spheres above cars represent the (x,y) lidar detection and the purple lines show the radar measurements with the velocity magnitude along the detected angle. The Z axis is not taken into account for tracking, so you are only tracking along the X/Y axis.
 
+I have tested only LIDAR and the result is RMSE over acepted values.
+<img src="media/radar_not_working.png" width="700"  />
+Also if radar is disabled
+<img src="media/lidar_not_working.png" width="700"  />
+But if all the sensors are activated then RMSE is good
+<img src="media/all_working.png" width="700"  />
+
 ---
 
 ## Other Important Dependencies
